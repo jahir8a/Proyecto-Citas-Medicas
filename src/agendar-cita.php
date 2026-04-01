@@ -29,6 +29,7 @@ if (!isset($_SESSION['usuario'])) {
                 <li><a href="agendar-cita.php" class="active"><i class="fas fa-calendar-plus"></i> Agendar Cita</a></li>
                 <li><a href="mis-citas.php"><i class="fas fa-calendar-check"></i> Mis Citas</a></li>
                 <li><a href="medicos.php"><i class="fas fa-user-md"></i> Médicos</a></li>
+                <li><a href="expedientes.php"><i class="fas fa-notes-medical"></i> Expedientes</a></li>
             </ul>
         </nav>
 

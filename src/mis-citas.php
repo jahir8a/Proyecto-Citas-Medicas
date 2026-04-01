@@ -41,6 +41,7 @@ $citas = $stmt->get_result();
                 <li><a href="agendar-cita.php"><i class="fas fa-calendar-plus"></i> Agendar Cita</a></li>
                 <li><a href="mis-citas.php" class="active"><i class="fas fa-calendar-check"></i> Mis Citas</a></li>
                 <li><a href="medicos.php"><i class="fas fa-user-md"></i> Médicos</a></li>
+                <li><a href="expedientes.php"><i class="fas fa-notes-medical"></i> Expedientes</a></li>
             </ul>
         </nav>
 
@@ -86,6 +87,17 @@ $citas = $stmt->get_result();
                                                class="btn btn-danger btn-small" 
                                                onclick="return confirm('¿Estás seguro de cancelar esta cita?')">
                                                 <i class="fas fa-times"></i> Cancelar
+                                            </a>
+                                        <?php endif; ?>
+                                        
+                                        <?php
+                                            $citaPath = __DIR__ . '/exports/cita_' . $cita['id'] . '.pdf';
+                                            $citaLink = file_exists($citaPath) ? 'exports/cita_' . $cita['id'] . '.pdf' : '';
+                                        ?>
+
+                                        <?php if ($citaLink): ?>
+                                            <a href="<?php echo $citaLink; ?>" class="btn btn-success btn-small" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Cita (PDF)
                                             </a>
                                         <?php endif; ?>
                                     </td>
